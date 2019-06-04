@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="create-section">
+	<a href="{% url 'create' %}" class="btn btn-success btn-md">Create todo</a>
+</div>
+{%for todo in todos %}
+	<article class="todo-section">
+		<p style="color:green;">On {{ todo.day }}</p>
+		<div>
+			<p>I will {{ todo.activity}}<span style="margin-left:10px;">Posted on<em class="ml-2">{{ todo.date_created }}</em></span></p>
+		</div>
+		<div class="buttons">
+			{% if todo.activity in notifications %}
+			<a class="notify-me">To be notified</a>
+			{% else %}
+			<a class="notify-me" href="{% url 'notify_me' todo_id=todo.id %}">notify me</a>
+			{% endif %}
+			<a href="{% url 'edit' todo_id=todo.id %}" class="btn btn-secondary btn-md todo-btn btn-edit">Edit</a>
+			<a href="{% url 'delete' todo_id=todo.id %}" class="btn btn-danger btn-md todo-btn btn-delete">Delete</a>
+		</div>
+	</article>
+	<hr>
+{% endfor %}
+
+{% endblock %}

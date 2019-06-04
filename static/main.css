@@ -1,0 +1,135 @@
+html,body{
+	overflow-x:hidden;
+}
+
+body{
+	position:relative;
+	color:#000;
+	font-family:cursive;
+}
+
+.navbar{
+	display:flex;
+	flex-direction:row;
+	padding:0 200px;
+	background-color:#000;
+}
+
+.navbar-brand{
+	font-family:cursive;
+}
+
+.navbar-nav{
+	display:flex;
+	justify-content:space-between;
+	padding:0 0 0 280px;
+}
+
+.navbar-nav a{
+	width:150px;
+	text-decoration:none;
+	color:green;
+}
+
+main{
+	width:70%;
+	margin:0 auto;
+	/*background-color:#ccc;*/
+}
+
+.create-section{
+	height:60px;
+	position:relative;
+	/*background-color:yellow;*/
+	margin-top:30px;
+}
+
+.create-section .btn{
+	position:absolute;
+	left:10px;
+}
+
+.todo-section{
+	display:flex;
+	align-items:center;
+	padding:10px 20px;
+	flex-direction:column;
+	position:relative;
+	justify-content:flex-start;
+}
+
+.todo-form{
+	display: flex;
+	justify-content:center;
+	text-align: center;
+}
+
+.asteriskField{
+	display:none;
+}
+
+p{
+	margin:0;
+}
+.buttons{
+	height:40px;
+}
+
+.todo-btn{
+	position:absolute;
+	width:80px;
+}
+
+.btn-edit{
+	bottom:10px;
+	right:150px;
+}
+
+.btn-delete{
+	bottom:10px;
+	right:50px;
+}
+
+.notify-me{
+	position:absolute;
+	left:20px;
+	bottom:10px;
+	color:green;
+	text-decoration:none;
+}
+
+.notify-me:hover{
+	text-decoration:none;
+	color:#000;
+}
+
+.notification{
+	position:fixed;
+	left:100px;
+	bottom:50%;
+	color:green;
+}
+
+@media(max-width:768px){
+	.navbar{
+		display:flex;
+		flex-direction:row;
+		padding:0;
+	}
+
+	.navbar-nav{
+		display:flex;
+		padding:20px;
+		background-color:#fff;
+	}
+
+	main{
+		width:100%;
+	}
+
+	.notification{
+		position:relative;
+		display:initial;
+	}
+
+}
